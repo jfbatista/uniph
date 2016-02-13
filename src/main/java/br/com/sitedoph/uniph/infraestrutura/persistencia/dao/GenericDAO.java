@@ -5,17 +5,17 @@ import java.util.List;
 
 import org.hibernate.criterion.Criterion;
 
-public interface GenericDao<T, ID extends Serializable> {
+public interface GenericDAO<T, ID extends Serializable> {
 
 	T salvarOuAtualizar(T entidade);
 
-	T excluir(Integer id);
+	void excluir(T entidade);
 
-	T buscarPorId(Integer id);
+	T buscarPorId(ID id);
 
 	List<T> buscarPorTodos();
 
 	List<T> buscarPorCriteria(Criterion... criteria);
 
-	List<T> buscarPorExemplo(T exemplo, String propriedadesAExcluir);
+	List<T> buscarPorExemplo(T exemplo, String... propriedadesAExcluir);
 }

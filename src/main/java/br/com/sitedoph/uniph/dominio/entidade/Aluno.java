@@ -118,4 +118,13 @@ public class Aluno {
 		this.dataCadastro = dataCadastro;
 	}
 
+	@Override
+	public String toString() {
+		return "Aluno [id=" + id + ", nome=" + nome + ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + ", rg="
+				+ rg + ", cpf=" + cpf + ", telefone=" + telefone + ", email=" + email + ", dataCadastro=" + dataCadastro
+				+ "]";
+	}
+	
+	
+
 }
