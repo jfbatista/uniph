@@ -35,6 +35,9 @@ public class Professor {
 	@Column(name = "DATA_CADASTRO")@Temporal(TemporalType.TIMESTAMP)
 	private Calendar dataCadastro;
 	
+	@Column(name="CURRICULO")
+	private String curriculo;
+	
 	public Long getId() {
 		return id;
 	}
@@ -90,8 +93,5 @@ public class Professor {
 	public void setCurriculo(String curriculo) {
 		this.curriculo = curriculo;
 	}
-
-	@Column(name = "CURRICULO")
-	private String curriculo;
 	
 }

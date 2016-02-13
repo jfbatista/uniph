@@ -4,6 +4,8 @@ import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -22,6 +24,9 @@ public class Aluno {
 	@Column(name = "NOME")
 	private String nome;
 
+	@Enumerated(EnumType.ORDINAL)
+	private Sexo sexo;
+	
 	@Column(name = "DATA_NASCIMENTO") @Temporal(TemporalType.TIMESTAMP)
 	private Calendar dataNascimento;
 
@@ -54,6 +59,15 @@ public class Aluno {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
 	}
 
 	public Calendar getDataNascimento() {

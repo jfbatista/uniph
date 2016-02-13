@@ -26,8 +26,57 @@ public class Disciplina {
 	@ManyToOne()
 	private Professor professor;
 	
+	@Column(name="CARGA_HORARIA")
+	private String cargaHoraria;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "TB_ALUNOTURMA")
 	private List<Aluno> aluno;
-	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
+	public String getCargaHoraria() {
+		return cargaHoraria;
+	}
+
+	public void setCargaHoraria(String cargaHoraria) {
+		this.cargaHoraria = cargaHoraria;
+	}
+
+	public List<Aluno> getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(List<Aluno> aluno) {
+		this.aluno = aluno;
+	}
+
+	@Override
+	public String toString() {
+		return "Disciplina [id=" + id + ", descricao=" + descricao + ", professor=" + professor + ", cargaHoraria="
+				+ cargaHoraria + ", aluno=" + aluno + "]";
+	}
+		
 }
