@@ -11,6 +11,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.br.CPF;
+
 @Entity
 @Table(name = "TB_PROFESSOR")
 public class Professor {
@@ -21,14 +25,18 @@ public class Professor {
 	private Long id;
 	
 	@Column(name = "NOME")
+	@NotBlank(message = "Insira o nome")
 	private String nome;
 	
+	@NotBlank(message = "Insira o CPF")
+	@CPF(message = "CPF Inválido")
 	@Column(name = "CPF")
 	private String cpf;
 	
 	@Column(name = "TELEFONE")
 	private String telefone;
 	
+	@NotBlank(message = "Insira o Email")
 	@Column(name = "EMAIL")
 	private String email;
 	

@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table(name = "TB_USUARIO")
 public class Usuario {
@@ -16,12 +18,15 @@ public class Usuario {
 	@Column(name = "CODIGO")
 	private Long id;
 
+	@NotBlank(message = "Insira o nome")
 	@Column(name = "NOME")
 	private String nome;
 
+	@NotBlank(message = "Insira o login")
 	@Column(name = "LOGIN")
 	private String login;
 
+	@NotBlank(message = "Insira a senha")
 	@Column(name = "SENHA")
 	private String senha;
 

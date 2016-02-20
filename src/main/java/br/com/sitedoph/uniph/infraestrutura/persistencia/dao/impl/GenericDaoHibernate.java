@@ -26,7 +26,7 @@ public class GenericDaoHibernate<T, ID extends Serializable> implements GenericD
 	}
 
 	@Override
-	public T salvarOuAtualizar(T entidade) {
+	public T salvar(T entidade) {
 		// TODO Auto-generated method stub
 		return ENTITY_MANAGER.merge(entidade);
 	}

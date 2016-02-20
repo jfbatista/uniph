@@ -12,6 +12,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table(name = "TB_DISCIPLINA")
 public class Disciplina {
@@ -21,12 +23,14 @@ public class Disciplina {
 	private Long id;
 	
 	@Column(name = "DESCRICAO")
+	@NotBlank(message = "Insira a descrição")
 	private String descricao;
 	
 	@ManyToOne()
 	private Professor professor;
 	
 	@Column(name="CARGA_HORARIA")
+	@NotBlank(message = "Insira a carga horaria")
 	private String cargaHoraria;
 	
 	@ManyToMany(fetch = FetchType.LAZY)

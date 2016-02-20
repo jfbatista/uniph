@@ -1,4 +1,4 @@
-package br.com.sitedoph.uniph.infraestrutura.persistencia;
+package br.com.sitedoph.uniph.infraestrutura.persistencia.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

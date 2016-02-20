@@ -7,7 +7,7 @@ import org.hibernate.criterion.Criterion;
 
 public interface GenericDAO<T, ID extends Serializable> {
 
-	T salvarOuAtualizar(T entidade);
+	T salvar(T entidade);
 
 	void excluir(T entidade);
 

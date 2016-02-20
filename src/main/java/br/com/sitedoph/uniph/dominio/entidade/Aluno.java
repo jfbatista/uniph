@@ -12,6 +12,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CPF;
+
 @Entity
 @Table(name = "TB_ALUNO")
 public class Aluno {
@@ -21,11 +24,14 @@ public class Aluno {
 	@Column(name = "MATRICULA")
 	private Long id;
 
+	@NotBlank(message = "Insira o nome")
 	@Column(name = "NOME")
 	private String nome;
 
+	@NotBlank(message = "selecione o sexo")
 	@Enumerated(EnumType.ORDINAL)
 	private Sexo sexo;
+	
 	
 	@Column(name = "DATA_NASCIMENTO") @Temporal(TemporalType.TIMESTAMP)
 	private Calendar dataNascimento;
@@ -33,6 +39,8 @@ public class Aluno {
 	@Column(name = "RG")
 	private String rg;
 
+	@NotBlank(message = "Insira o CPF")
+	@CPF(message = "CPF Inválido")
 	@Column(name = "CPF")
 	private String cpf;
 

@@ -12,6 +12,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.sitedoph.uniph.dominio.entidade.Aluno;
+import br.com.sitedoph.uniph.infraestrutura.persistencia.util.JPAUtil;
 import br.com.sitedoph.uniph.utils.Utils;
 
 public class PersistenciaTest {

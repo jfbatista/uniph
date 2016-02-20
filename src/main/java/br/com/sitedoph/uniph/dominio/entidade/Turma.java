@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table(name = "TB_TURMA")
 public class Turma {
@@ -18,6 +20,7 @@ public class Turma {
 	@Column(name = "CODIGO_TURMA")
 	private Long id;
 	
+	@NotBlank(message = "Insira a descrição")
 	@Column(name="DESCRICAO")
 	private String descricao;
 	
